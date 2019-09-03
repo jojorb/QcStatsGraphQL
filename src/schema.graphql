@@ -1,0 +1,490 @@
+type gameMods {
+  duel: RatingsMod
+  tdm:  RatingsMod
+}
+
+type RatingsMod {
+  rating: Int
+  deviation: Int
+  volitility: Float
+  lastUpdated: String
+  gamesCount: Int
+  lastChange: Int
+  history: [RatingsHistory]
+}
+
+type RatingsHistory {
+  gamesPlayed: Int
+  eloRating: Int
+  time: String
+  result: Int
+  sessionId: ID
+  # gameDetails: GamesDetails
+}
+
+type PlayerLoadOut {
+  namePlateId: String
+  iconId: String
+}
+
+type Champions {
+  champions: Champion
+}
+
+type Champion {
+  RANGER:Accomplishment
+  SCALEBEARER: Accomplishment
+  VISOR: Accomplishment
+  ANARKI: Accomplishment
+  NYX: Accomplishment
+  SORLAG: Accomplishment
+  CLUTCH: Accomplishment
+  GALENA: Accomplishment
+  SLASH: Accomplishment
+  DOOM_SLAYER: Accomplishment
+  BJ_BLAZKOWICZ: Accomplishment
+  KEEL: Accomplishment
+  STROGG: Accomplishment
+  DEATH_KNIGHT: Accomplishment
+  ATHENA: Accomplishment
+  EISEN: Accomplishment
+}
+
+type Accomplishment {
+  gameModes: GameModes
+  damagetatusList: DamagetatusList
+  medals: Int
+}
+
+type GameModes {
+  GameModeFFA: GameModeStats
+  GameModeTeamDeathmatch: GameModeStats
+  GameModeDuel: GameModeStats
+  GameModeObelisk: GameModeStats
+  GameModeObeliskPro: GameModeStats
+  GameModeTeamDeathmatch2vs2: GameModeStats
+  GameModeInstagib: GameModeStats
+  GameModeDuelPro: GameModeStats
+  GameModeSlipgate: GameModeStats
+  GameModeCtf: GameModeStats
+}
+
+type GameModeStats{
+  won: Int
+  lost: Int
+  tie: Int
+  lifeTime: Int
+  timePlayed: Int
+  kills: Int
+  deaths: Int
+  powerPickups: Int
+  megaHealthPickups: Int
+  heavyArmorPickups: Int
+  tacticalPickups: Int
+  score: Int
+  captured: Int
+  defended: Int
+  scoringEvents : ScoringEvents
+  healed: Int
+  smallArmorPickups: Int
+  rankedWon: Int
+  rankedLost: Int
+  rankedTied: Int
+  rankedTimePlayed: Int
+}
+
+type ScoringEvents {
+  SCORING_EVENT_KILL: Int
+  SCORING_EVENT_ASSIST: Int
+  SCORING_EVENT_HEADSHOT: Int
+  SCORING_EVENT_MIDAIRKILL: Int
+  SCORING_EVENT_IMPRESSIVE: Int
+  SCORING_EVENT_DIEHARD: Int
+  SCORING_EVENT_FIRSTBLOOD: Int
+  SCORING_EVENT_ABILITYKILL: Int
+  SCORING_EVENT_EXCELENT: Int
+  SCORING_EVENT_TRIPLEKILL: Int
+  SCORING_EVENT_OVERKILL: Int
+  SCORING_EVENT_EXTIRPATOR: Int
+  SCORING_EVENT_CRUSHER: Int
+  SCORING_EVENT_EXTERMINATOR: Int
+  SCORING_EVENT_DESTROYER: Int
+  SCORING_EVENT_REAPER: Int
+  SCORING_EVENT_GOD_OF_DEATH: Int
+  SCORING_EVENT_HITMAN: Int
+  SCORING_EVENT_GAUNTLET: Int
+  SCORING_EVENT_COMBO_KILL: Int
+  SCORING_EVENT_RING_OUT: Int
+  SCORING_EVENT_PERFORATION: Int
+  SCORING_EVENT_SERIAL_KILLER_1: Int
+  SCORING_EVENT_SERIAL_KILLER_2: Int
+  SCORING_EVENT_SERIAL_KILLER_3: Int
+  SCORING_EVENT_SERIAL_KILLER_4: Int
+  SCORING_EVENT_SERIAL_KILLER_5: Int
+  SCORING_EVENT_SERIAL_KILLER_6: Int
+  SCORING_EVENT_SERIAL_KILLER_7: Int
+  SCORING_EVENT_SERIAL_KILLER_8: Int
+  SCORING_EVENT_SERIAL_KILLER_9: Int
+  SCORING_EVENT_SERIAL_KILLER_10: Int
+  SCORING_EVENT_LAST_SHOT: Int
+  SCORING_EVENT_ASSISTANT: Int
+  SCORING_EVENT_STOP: Int
+  SCORING_EVENT_GUARDIAN: Int
+  SCORING_EVENT_SNIPER: Int
+  SCORING_EVENT_REVENGE: Int
+  SCORING_EVENT_CLOWN: Int
+  SCORING_EVENT_FROM_THE_GRAVE: Int
+  SCORING_EVENT_BAD_LUCK: Int
+  SCORING_EVENT_COUNTER_ABILITY: Int
+  SCORING_EVENT_MELEE_MASTERY: Int
+  SCORING_EVENT_MELEE_GOD: Int
+  SCORING_EVENT_MACHINEGUN_MASTERY: Int
+  SCORING_EVENT_MACHINEGUN_GOD: Int
+  SCORING_EVENT_SHOTGUN_MASTERY: Int
+  SCORING_EVENT_SHOTGUN_GOD: Int
+  SCORING_EVENT_ROCKET_LAUNCHER_MASTERY: Int
+  SCORING_EVENT_ROCKET_LAUNCHER_GOD: Int
+  SCORING_EVENT_LIGHTNING_GUN_MASTERY: Int
+  SCORING_EVENT_LIGHTNING_GUN_GOD: Int
+  SCORING_EVENT_RAILGUN_MASTERY: Int
+  SCORING_EVENT_RAILGUN_GOD: Int
+  SCORING_EVENT_NAILGUN_MASTERY: Int
+  SCORING_EVENT_NAILGUN_GOD: Int
+  SCORING_EVENT_FIGHTER: Int
+  SCORING_EVENT_TERRORIST: Int
+  SCORING_EVENT_AVENGER: Int
+  SCORING_EVENT_QUAD_KILLER: Int
+  SCORING_EVENT_RAGE: Int
+  SCORING_EVENT_FLOCK: Int
+  SCORING_EVENT_DAMAGEDEALER: Int
+  SCORING_EVENT_TELEFRAG: Int
+  SCORING_EVENT_OBELISK_CAPTURE: Int
+  SCORING_EVENT_OBELISK_CAPTURE_ASSIST: Int
+  SCORING_EVENT_OBELISK_DEFEND: Int
+  SCORING_EVENT_POWERUP: Int
+  SCORING_EVENT_FFA_PERFECT: Int
+  SCORING_EVENT_OBELISK_MASTERY: Int
+  SCORING_EVENT_OBELISK_OFFENCE: Int
+  SCORING_EVENT_MATCH_WIN: Int
+  SCORING_EVENT_MATCH_COMPLETE: Int
+  SCORING_EVENT_TEAM_WIN: Int
+  SCORING_EVENT_TEAM_TIE: Int
+  SCORING_EVENT_1_PLACE: Int
+  SCORING_EVENT_2_PLACE: Int
+  SCORING_EVENT_3_PLACE: Int
+  SCORING_EVENT_MVP: Int
+  SCORING_EVENT_DAMAGE: Int
+  SCORING_EVENT_ABILITY_HEAL: Int
+  SCORING_EVENT_BLOCKING: Int
+  SCORING_EVENT_PICKUP_MAJOR: Int
+  SCORING_EVENT_PICKUP_WEAPON: Int
+  SCORING_EVENT_TOTEM_DESTROY: Int
+  SCORING_EVENT_ABILITY_USE_RANGER: Int
+  SCORING_EVENT_FIRST_GAME: Int
+  SCORING_EVENT_FIRST_WIN: Int
+  SCORING_EVENT_ABILITY_USE_VISOR: Int
+  SCORING_EVENT_ABILITY_USE_SCALEBEARER: Int
+  SCORING_EVENT_ABILITY_USE_NYX: Int
+  SCORING_EVENT_ABILITY_USE_GALENA: Int
+  SCORING_EVENT_ABILITY_USE_ANARKI: Int
+  SCORING_EVENT_ABILITY_USE_CLUTCH: Int
+  SCORING_EVENT_ABILITY_USE_SLASH: Int
+  SCORING_EVENT_ABILITY_USE_SORLAG: Int
+  SCORING_EVENT_ABILITY_USE_KEEL: Int
+  SCORING_EVENT_ABILITY_USE_STROGG: Int
+  SCORING_EVENT_ABILITY_USE_DOOM: Int
+  SCORING_EVENT_ABILITY_USE_BJ: Int
+  SCORING_EVENT_HELPING_HAND: Int
+  SCORING_EVENT_QUATERBACK: Int
+  SCORING_EVENT_DEFENDER: Int
+  SCORING_EVENT_SURVIVOR: Int
+  SCORING_EVENT_SCAVENGER: Int
+  SCORING_EVENT_MOST_DAMAGE: Int
+  SCORING_EVENT_MOST_ACCURATE: Int
+  SCORING_EVENT_PARTY_BREAKER: Int
+  SCORING_EVENT_DENIED: Int
+  SCORING_EVENT_POWERUP_MASSACRE: Int
+  SCORING_EVENT_POINT_BLANK: Int
+  SCORING_EVENT_NET_MASTER: Int
+  SCORING_EVENT_TANK: Int
+  SCORING_EVENT_SHOWSTOPPER: Int
+  SCORING_EVENT_OT: Int
+  SCORING_EVENT_COMEBACK: Int
+  SCORING_EVENT_PRECISE: Int
+  SCORING_EVENT_COLLATERAL_DAMAGE: Int
+  SCORING_EVENT_DP: Int
+  SCORING_EVENT_STOPWATCH: Int
+  SCORING_EVENT_NEMESIS: Int
+  SCORING_EVENT_AIRBORNE: Int
+  SCORING_EVENT_BRING_EM_DOWN: Int
+  SCORING_EVENT_DOMINATING: Int
+  SCORING_EVENT_PROVACATEUR: Int
+  SCORING_EVENT_KAMIKAZE: Int
+  SCORING_EVENT_DISINTEGRATOR: Int
+  SCORING_EVENT_SHUB_SLAYER: Int
+  SCORING_EVENT_DEADLY_SLIPGATE: Int
+  SCORING_EVENT_SHOOTING_RANGE: Int
+  SCORING_EVENT_CONTROLLER: Int
+  SCORING_EVENT_SEER: Int
+  SCORING_EVENT_STOMPER: Int
+  SCORING_EVENT_CHOOCHOO: Int
+  SCORING_EVENT_ROADKILL: Int
+  SCORING_EVENT_EVASIVE: Int
+  SCORING_EVENT_INSIDEOUT: Int
+  SCORING_EVENT_FROM_THE_SHADOW: Int
+  SCORING_EVENT_HOVERTANK: Int
+  SCORING_EVENT_REANIMATION: Int
+  SCORING_EVENT_JUNKIE: Int
+  SCORING_EVENT_PLAGUE: Int
+  SCORING_EVENT_MELTDOWN: Int
+  SCORING_EVENT_VENOMOUS: Int
+  SCORING_EVENT_THEROCK: Int
+  SCORING_EVENT_THEDRILL: Int
+  SCORING_EVENT_THESHOCKER: Int
+  SCORING_EVENT_DAMNED: Int
+  SCORING_EVENT_BLESSED: Int
+  SCORING_EVENT_CURSED: Int
+  SCORING_EVENT_NAZI_SLAYER: Int
+  SCORING_EVENT_MEIN_LEBEN: Int
+  SCORING_EVENT_GET_PSYCHED: Int
+  SCORING_EVENT_SLIDER: Int
+  SCORING_EVENT_SLALOM: Int
+  SCORING_EVENT_BLACK_SWAN: Int
+  SCORING_EVENT_BERSERKER: Int
+  SCORING_EVENT_DAISY: Int
+  SCORING_EVENT_SLAYER: Int
+  SCORING_EVENT_TRIBOLT_GOD: Int
+  SCORING_EVENT_PINEAPPLE: Int
+  SCORING_EVENT_NADE_SPAM: Int
+  SCORING_EVENT_MORTAR: Int
+  SCORING_EVENT_BOMBARDMENT: Int
+  SCORING_EVENT_PSI_RADAR: Int
+  SCORING_EVENT_AIR_ASSAULT: Int
+  SPECIAL_DAMAGEDEALER_EVENT: Int
+  SPECIAL_HEALER_EVENT: Int
+  SPECIAL_DAMAGEABSORBED_EVENT: Int
+  CHAMPION_MATCH_WIN: Int
+  CHAMPION_MATCH_COMPLETE: Int
+  ABILLITY_KILLS_GOLD: Int
+  ABILLITY_KILLS_SILVER: Int
+  ABILLITY_KILLS_BRONZE: Int
+  DAMAGEDEALT_GOLD: Int
+  DAMAGEDEALT_SILVER: Int
+  DAMAGEDEALT_BRONZE: Int
+  ASSIST_GOLD: Int
+  ASSIST_SILVER: Int
+  ASSIST_BRONZE: Int
+  MACHINEGUN_KILLS_GOLD: Int
+  MACHINEGUN_KILLS_SILVER: Int
+  MACHINEGUN_KILLS_BRONZE: Int
+  RAILGUN_KILLS_GOLD: Int
+  RAILGUN_KILLS_SILVER: Int
+  RAILGUN_KILLS_BRONZE: Int
+  ROCKET_KILLS_GOLD: Int
+  ROCKET_KILLS_SILVER: Int
+  ROCKET_KILLS_BRONZE: Int
+  NAILGUN_KILLS_GOLD: Int
+  NAILGUN_KILLS_SILVER: Int
+  NAILGUN_KILLS_BRONZE: Int
+  TRIBOLT_KIILS_GOLD: Int
+  TRIBOLT_KIILS_SILVER: Int
+  TRIBOLT_KIILS_BRONZE: Int
+  SHOTGUN_KILLS_GOLD: Int
+  SHOTGUN_KILLS_SILVER: Int
+  SHOTGUN_KILLS_BRONZE: Int
+  LIGHTNING_GUN_KILLS_GOLD: Int
+  LIGHTNING_GUN_KILLS_SILVER: Int
+  LIGHTNING_GUN_KILLS_BRONZE: Int
+  ACCURACY_GOLD: Int
+  ACCURACY_SILVER: Int
+  ACCURACY_BRONZE: Int
+  GAUNTLET_KILLS_GOLD: Int
+  GAUNTLET_KILLS_SILVER: Int
+  GAUNTLET_KILLS_BRONZE: Int
+  KILLS_BASIC: Int
+  DAMAGEDEALT_BASIC: Int
+  ASSIST_BASIC: Int
+  HEAL_BASIC: Int
+  ARMOR_PICKUP_BASIC: Int
+  MEGA_PICKUP_BASIC: Int
+  POWER_PICKUP_BASIC: Int
+  SCORING_EVENT_INFERNO: Int
+  SCORING_EVENT_TRIDENT: Int
+  SCORING_EVENT_SMELTER: Int
+  SCORING_EVENT_ROPE_TRICK: Int
+  SCORING_EVENT_SWINGER: Int
+  SCORING_EVENT_FLOOR_IS_LAVA: Int
+  SCORING_EVENT_PICKUP_MEGA_HEALTH: Int
+  SCORING_EVENT_PICKUP_HEAVY_ARMOR: Int
+  SCORING_EVENT_ABILITY_USE_ANY: Int
+  SCORING_EVENT_HANDYMAN: Int
+  SCORING_EVENT_FORTRESS: Int
+  SCORING_EVENT_WEAPONS_FACTORY: Int
+}
+
+type DamagetatusList {
+  UNKNOWN_DAMAGETYPE: Damage
+  GAUNTLET: Damage
+  MACHINEGUN: Damage
+  MACHINEGUN_GRADE1: Damage
+  SHOTGUN: Damage
+  SHOTGUN_GRADE1: Damage
+  NAILGUN: Damage
+  NAILGUN_GRADE1: Damage
+  ROCKET_LAUNCHER: Damage
+  LIGHTNING_GUN: Damage
+  RAILGUN: Damage
+  LAGBOLT: Damage
+  ACID_DOMAIN: Damage
+  DAMAGEDOMAIN: Damage
+  KILL_DOMAIN: Damage
+  DIRE_ORB: Damage
+  DIRE_ORB_EXPLOSION: Damage
+  DIRE_ORB_TELEFRAG: Damage
+  UNHOLY: Damage
+  TELEFRAG: Damage
+  FALL_DAMAGE: Damage
+  PLASMA_TRAIL: Damage
+  PLASMA_TRAIL_EXPLOSION: Damage
+  MINING_LASER: Damage
+  ABILITY_BERSERK: Damage
+  SWARM_GRENADE: Damage
+  SB_DASH: Damage
+  SB_STOMP: Damage
+  ACID_SPIT_DIRECT: Damage
+  VENDETTA_TELEFRAG: Damage
+  ACID_DOT: Damage
+  FLAME_DOT: Damage
+  FLAME: Damage
+  ACID: Damage
+  DRONE_KAMIKAZE_EXPLOSION: Damage
+  RECON_DRONE: Damage
+  RECON_DRONE_EXPLOSION: Damage
+  ATHENA_HIT: Damage
+  FLAME_MELEE: Damage
+  FLAME_DOMAIN: Damage
+  TURRET: Damage
+  PUSH_TO_SUICIDE: Damage
+}
+
+type Damage {
+  hits: Int
+  shots: Int
+  kills: Int
+  headshots: Int
+  damage: Int
+}
+
+type PlayerLevelState {
+  level: Int
+  exp: Int
+}
+
+type Games {
+  id: ID
+  playedDateTime: String
+  gameMode: String
+  map: String
+  score: String
+  scoreLimit: Int
+  timeLimit: Int
+  gameDetails: GamesDetails
+}
+
+type GamesDetails {
+  summary: String
+  id: ID
+  playedDateTime: String
+  mapName: String
+  timeLimit: Int
+  scoreLimit: Int
+  gameMode: String
+  battleReportPersonalStatistics: [BattleReportPersonalStatistics]
+}
+
+type BattleReportPersonalStatistics {
+  isCustomGame: Boolean
+  userId: ID
+  nickname: String
+  teamIndex: Int
+  averageLifetime: Int
+  score: Int
+  totalDamage: Int
+  kills: Int
+  deaths: Int
+  previousProfileXp: Int
+  megaHealthPickups: Int
+  heavyArmorPickups: Int
+  smallArmorPickups: Int
+  powerPickups: Int
+  hpHealed: Int
+  bestWeapon: String
+  bestWeaponAccuracyPercent: Int
+  bestWeaponDamage: Int
+  bestWeaponKills: Int
+  lastSelectedChampion: String
+  # completedChallenges: [],
+  # completedStaticChallenges: [],
+  scoringEvents: ScoringEvents
+  # championsTime
+  frag: Int
+  duelScore: Int
+  squadChampionIndexArray: [String]
+  damageStatsWithDamageTypeIndexArray: Weapons
+  sumAllDamageStats: Damage
+  earnedXp: Int
+  bonusXp: Int
+  earnedFavor: Int
+  bonusFavor: Int
+}
+
+type Weapons {
+  GAUNTLET: Damage
+  MACHINEGUN: Damage
+  MACHINEGUN_GRADE1: Damage
+  SHOTGUN: Damage
+  SHOTGUN_GRADE1: Damage
+  NAILGUN: Damage
+  NAILGUN_GRADE1: Damage
+  ROCKET_LAUNCHER: Damage
+  LIGHTNING_GUN: Damage
+  RAILGUN: Damage
+  LAGBOLT: Damage
+}
+
+type Player {
+  name: String!
+  playerRatings: gameMods
+  playerLoadOut: PlayerLoadOut
+  playerProfileStats: Champions
+  playerLevelState: PlayerLevelState
+  matches: [Games]
+}
+
+type SearchPlayer {
+  entityId: ID,
+  entityName: String
+}
+
+type Leaderboard {
+  boardType: String
+  entries: [Entries]
+  totalEntries: Int
+}
+
+type Entries {
+  userName: String
+  eloRating: Int
+  profileIconId: String
+  namePlateId: String
+}
+
+
+
+type Query {
+  unamePlayerFetch: Player
+  unamePlayer(name: String!): Player
+  gamesDetails(id: ID!): GamesDetails
+  searchPlayer(search: String!): [SearchPlayer]
+  qcLeaderboard(board: String season: String): Leaderboard
+}

@@ -1,0 +1,28 @@
+{
+    "name": "qcstatsgraphql",
+    "version": "1.0.0",
+    "description": "stats.quake.com REST API V2 encapsulate with GraphQl",
+    "main": "index.js",
+    "dependencies": {
+        "apollo-datasource-rest": "^0.1.4",
+        "apollo-server": "^2.0.5",
+        "graphql": "^0.13.2",
+        "graphql-import": "^0.7.1",
+        "node-fetch": "^2.6.0"
+    },
+    "devDependencies": {
+        "build-esm": "^4.2.2",
+        "esm": "^3.0.79",
+        "nodemon": "^1.19.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon -r esm index.js",
+        "build": "build-esm",
+        "start": "node ./dist/index.js",
+        "heroku-postbuild": "yarn build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT"
+}
