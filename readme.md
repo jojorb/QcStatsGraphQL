@@ -27,11 +27,6 @@ $ yarn install
 
 ## Usage
 
-```sh
-$ cd QcStatsGraphQL
-$ yarn install
-```
-
 > To install on your local machine
 
 ```sh
@@ -59,9 +54,6 @@ Copying readme.md => dist/readme.md
 🚀 Server spawned at http://localhost:1337
 ```
 
-
-
-
 > To add or mod a query
 
 - check the json endpoint
@@ -70,6 +62,8 @@ Copying readme.md => dist/readme.md
 - add the type of resolvers in `./src/resolvers/Query.js`
 
 ## API
+
+![quake champions graphql](https://i.ibb.co/f2yLmbd/Screenshot-from-2019-09-03-19-33-16.png)
 
 ### Example of gql Query
 
@@ -87,6 +81,8 @@ Copying readme.md => dist/readme.md
 }
 ```
 
+![quake champions graphql](https://i.ibb.co/9b6pSKc/Screenshot-from-2019-09-03-19-27-53.png)
+
 > Search for a player
 
 ```gql
@@ -97,6 +93,8 @@ Copying readme.md => dist/readme.md
   }
 }
 ```
+
+![quake champions graphql](https://i.ibb.co/XbQdGC9/Screenshot-from-2019-09-03-19-28-59.png)
 
 > Get Stats from a player name
 
@@ -114,6 +112,8 @@ Copying readme.md => dist/readme.md
     }
 }
 ```
+
+![quake champions graphql](https://i.ibb.co/LkwMJgc/Screenshot-from-2019-09-03-19-30-26.png)
 
 > Get all player stats from a game id
 
@@ -139,6 +139,8 @@ Copying readme.md => dist/readme.md
   }
 }
 ```
+
+![quake champions graphql](https://i.ibb.co/JBqt6kk/Screenshot-from-2019-09-03-19-31-21.png)
 
 ## Maintainers
 
