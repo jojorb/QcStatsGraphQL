@@ -27,7 +27,12 @@ $ yarn install
 
 ## Usage
 
-> To launch on your local machine
+### Code with Codesandbox
+>open this project on codesandbox and check the graphql  playground
+
+[![quake champions codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)][codeSandBoxUrl]
+
+### To launch on your local machine
 
 ```sh
 $ yarn dev
@@ -39,7 +44,8 @@ $ nodemon -r esm server.js
 🚀 Server spawned at http://localhost:1337
 ```
 
-> To launch in production
+### To launch in production
+> to work on heroku add `"heroku-postbuild": "yarn build"` inside your package.json scripts
 
 ```sh
 $ yarn build && node ./dist/index.js
@@ -150,3 +156,4 @@ Copying readme.md => dist/readme.md
 [me]: https://github.com/RobyRemzy
 [li-badge]: https://img.shields.io/github/license/RobyRemzy/QcStatsGraphQL
 [ci-badge]: https://img.shields.io/circleci/build/github/RobyRemzy/QcStatsGraphQL?label=CircleCI
+[codeSandBoxUrl]: https://codesandbox.io/s/github/RobyRemzy/QcStatsGraphQL

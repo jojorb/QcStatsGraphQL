@@ -1,49 +1,46 @@
 const isReachable = require('is-reachable');
-const  fetch = require("node-fetch");
 
-describe('rest api test', () =>{
-    test('is rest api alive', async () => {
-        const apiv2 = {
-            endpoint: 'https://stats.quake.com',
-            search: 'https://stats.quake.com/api/v2/Player/Search?term=rapha',
-            playerinfo: 'https://stats.quake.com/api/v2/Player/Stats?name=rapha',
-            matchInfo: 'https://stats.quake.com/api/v2/Player/Games?id=6f790a15-9563-11e9-af14-0003ffb6d7a2',
-            gameDetails: 'https://stats.quake.com/api/v2/Player/GamesSummary?name=rapha',
-            leaderboardCurrent: 'https://stats.quake.com/api/v2/Leaderboard?from=0&board=duel&season=current',
-        };
-        isReachable(apiv2.endpoint);
-        expect(isReachable()).toBeTruthy();
-    }),
+describe('rest api test', () => {
+    const name = 'AMD.COOLLERZ'
+    const gameId = '6f790a15-9563-11e9-af14-0003ffb6d7a2'
+    const gameType = 'duel'
+    const season = 'current'
+    const apiv2 = {
+        endpoint: 'https://stats.quake.com',
+        search: `https://stats.quake.com/api/v2/Player/Search?term=${name}`,
+        playerInfo: `https://stats.quake.com/api/v2/Player/Stats?name=${name}`,
+        matchInfo: `https://stats.quake.com/api/v2/Player/Games?id=${gameId}`,
+        gameDetails: `https://stats.quake.com/api/v2/Player/GamesSummary?name=${name}`,
+        leaderboardCurrent: `https://stats.quake.com/api/v2/Leaderboard?from=0&board=${gameType}&season=${season}`,
+    };
 
-    test('graphql search', async () => {
-        const query = `
-            query {
-                searchPlayer(search: "AMD.COOLLERZ") {
-                entityId
-                entityName
-                }
-            }
-            `
-        const resp = await fetch('http://localhost:1337', {
-            method: 'post',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({query})
-        })
-        .then(response => response.json())
-        .then(data => {
-            expect(data).toMatchObject({
-                "data": {
-                    "searchPlayer": [
-                    {
-                        "entityId": "a5d6aadd-372c-11e7-80c0-0003ffaa4031",
-                        "entityName": "AMD.COOLLERZ"
-                    }
-                    ]
-                } 
-            })
-        })
+    testApi = (url) => {
+        isReachable(url)
+        return isReachable;
+    };
+
+    test('is front api alive', async () => {
+        expect(await isReachable(apiv2.endpoint)).toBeTruthy();
+    })
+
+    test('is rest api search', async () => {
+        expect(await testApi(apiv2.search)).toBeTruthy();
+    })
+
+    test('is rest api player info', async () => {
+        expect(await testApi(apiv2.playerInfo)).toBeTruthy();
+    })
+
+    test('is rest api match info', async () => {
+        expect(await testApi(apiv2.matchInfo)).toBeTruthy();
+    })
+
+    test('is rest api game details', async () => {
+        expect(await testApi(apiv2.gameDetails)).toBeTruthy();
+    })
+
+    test('is rest api leaderbord', async () => {
+        expect(await testApi(apiv2.leaderboardCurrent)).toBeTruthy();
     })
 
 });

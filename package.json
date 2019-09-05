@@ -18,7 +18,7 @@
         "nodemon": "^1.19.1"
     },
     "scripts": {
-        "test": "jest",
+        "test": "jest --detectOpenHandles",
         "dev": "nodemon -r esm index.js",
         "build": "build-esm",
         "start": "node ./dist/index.js",
