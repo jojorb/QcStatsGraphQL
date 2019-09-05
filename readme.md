@@ -6,7 +6,7 @@
 > [Quake Champions Stats](https://stats.quake.com/) REST API V2 encapsulate with GraphQl
 
 The Rest api of stats.quake.com isn't very much public. I did scrape a little bit to get some endpoints.
-Probably not a good idea to use for big production. Ask Bethesda Softworks LLC 💜
+Probably not a good idea to use for big production. Ask Bethesda Softworks ™ LLC 💜
 
 
 ## Highlights
@@ -27,7 +27,7 @@ $ yarn install
 
 ## Usage
 
-> To install on your local machine
+> To launch on your local machine
 
 ```sh
 $ yarn dev
