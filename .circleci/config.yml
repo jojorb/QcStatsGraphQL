@@ -36,7 +36,7 @@ jobs:
       # run tests!
       # get server up and running in the background
       - run:
-          command: yarn tests
+          command: yarn start
           background: true
       # wait for the server to start responding. We expect Bad Request 400 once it starts listening.
       # so override the shell and have the last command be the : { null } command to force exit code 0.
